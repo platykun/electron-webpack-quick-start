@@ -44,3 +44,9 @@ yarn dist
 # `yarn compile` & create unpacked build with electron-builder
 yarn dist:dir
 ```
+
+
+### memo
+
+https://github.com/iffy/electron-updater-example
+

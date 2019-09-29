@@ -1,6 +1,6 @@
 {
   "name": "electron-webpack-quick-start",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "license": "MIT",
   "scripts": {
     "dev": "electron-webpack dev",
@@ -8,12 +8,23 @@
     "dist": "yarn compile && electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
+  "build": {
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "platykun",
+        "repo": "electron-webpack-quick-start"
+      }
+    ]
+  },
   "dependencies": {
+    "electron-updater": "^4.1.2",
     "source-map-support": "^0.5.12"
   },
   "devDependencies": {
     "electron": "5.0.6",
     "electron-builder": "^21.0.11",
+    "electron-log": "^3.0.8",
     "electron-webpack": "^2.7.4",
     "webpack": "~4.35.3"
   }
