@@ -4,13 +4,13 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: macos-latest
-
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN}}
     steps:
-    - uses: actions/checkout@v2
-    - name: yarn install
-      run: yarn
-    - name: do package
-      run: |
-        yarn dist
+      - uses: actions/checkout@v2
+      - name: yarn install
+        run: yarn
+      - name: do package
+        run: |
+          yarn dist
