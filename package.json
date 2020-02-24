@@ -6,9 +6,16 @@
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
-    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
+    "publish_dist": "yarn compile && electron-builder --publish always",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null "
   },
   "build": {
+    "mac": {
+      "publish": ["github"]
+    },
+    "win": {
+      "publish": ["github"]
+    },
     "publish": [
       {
         "provider": "github",
