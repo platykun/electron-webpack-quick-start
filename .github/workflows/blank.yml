@@ -13,4 +13,4 @@ jobs:
         run: yarn
       - name: do package
         run: |
-          yarn dist
+          yarn publish_dist
