@@ -3,8 +3,19 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  build-on-mac:
     runs-on: macos-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN}}
+    steps:
+      - uses: actions/checkout@v2
+      - name: yarn install
+        run: yarn
+      - name: do package
+        run: |
+          yarn publish_dist
+  build-on-win:
+    runs-on: windows-latest
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN}}
     steps:
